@@ -1,0 +1,42 @@
+# Emacs packages / caches
+.emacs.d/elpa/
+.emacs.d/straight/
+.emacs.d/quelpa/
+.emacs.d/eln-cache/
+
+# Emacs generated files
+.emacs.d/auto-save-list/
+.emacs.d/tramp
+.emacs.d/tramp.*
+.emacs.d/recentf
+.emacs.d/places
+.emacs.d/savehist
+.emacs.d/bookmarks
+.emacs.d/projectile-bookmarks.eld
+.emacs.d/url/
+.emacs.d/request/
+.emacs.d/transient/
+.emacs.d/eshell/history
+.emacs.d/eshell/lastdir
+.emacs.d/.lsp-session-v1
+.emacs.d/.eglot/
+
+# Emacs temporary / backup files
+*~
+\#*\#
+.#*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets / local machine config
+.env
+.env.*
+*.local
+*.secret
+*.key
+*.pem
+
+# Logs
+*.log
