@@ -1,3 +1,15 @@
+;;;; バッファを一発でリロードする
+
+(defun revert-buffer-no-confirm (&optional force-reverting)
+  (interactive "P")
+  ;;(message "force-reverting value is %s" force-reverting)
+  (if (or force-reverting (not (buffer-modified-p)))
+      (revert-buffer :ignore-auto :noconfirm)
+    (error "The buffer has been modified")))
+
+;; reload buffer
+(global-set-key "\M-r" 'revert-buffer-no-confirm)
+
 ;; C-h を Backspace
 (keyboard-translate ?\C-h ?\C-?)
 
@@ -19,6 +31,10 @@
 ;; 括弧対応
 (show-paren-mode t)
 
+;: command, option -> meta
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'meta)
+
 ;; タブをスペースに
 (setq-default indent-tabs-mode nil)
 
@@ -29,6 +45,9 @@
 ;; UTF-8
 (set-language-environment "Japanese")
 (prefer-coding-system 'utf-8)
+
+;; theme setting
+ (load-theme 'modus-vivendi t)
 
 ;; package
 (require 'package)
